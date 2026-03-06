@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Atelier | Marquis</title>
+    <meta name="description" content="View detailed description and configure your Marquis">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Верхняя мини-навигация -->
+    <div class="top-nav">
+        <div class="lang">
+            <span onclick="setLanguage('en')" style="cursor: pointer; font-weight: bold; color: var(--color-white)">EN</span>
+            <span style="margin: 0 4px; color: #555">|</span>
+            <span onclick="setLanguage('ru')" style="cursor: pointer; color: #888">RU</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Provider</a>
+            <a href="#">Privacy</a>
+            <a href="#">Search</a>
+        </div>
+    </div>
+
+    <!-- Главная шапка -->
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"></div>
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" data-i18n="nav_garage">Le Garage</a></li>
+                <li><a href="catalog.html" data-i18n="nav_collection">La Collection</a></li>
+                <li><a href="details.html" class="active" data-i18n="nav_atelier">L'Atelier</a></li>
+                <li><a href="maison.html" data-i18n="nav_maison">La Maison</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Главный контент страницы деталей -->
+    <main id="details-container">
+        <!-- Динамический контент заполняется через details.js -->
+    </main>
+
+    <div id="model-content">
+        <!-- Контент внедряется JS -->
+    </div>
+
+    <div class="atelier-form-section" id="atelier-form-section" style="display: none;">
+        <div class="container">
+            <div class="atelier-header">
+                <h2 data-i18n="form_header_title">Configure in L'Atelier</h2>
+                <p data-i18n="form_header_subtitle">Customize your vehicle and secure your allocation.</p>
+            </div>
+            
+            <div class="configurator-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+                <div class="form-container" style="margin: 0;">
+                    <form id="vehicle-form" novalidate>
+                        <input type="hidden" id="model" name="model">
+                        
+                        <div class="form-group">
+                        <label for="year" class="form-label" data-i18n="label_year">Model Year *</label>
+                        <select id="year" name="year" class="form-control form-select">
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="engine" class="form-label" data-i18n="label_engine">Engine Variant *</label>
+                        <select id="engine" name="engine" class="form-control form-select">
+                            <option value="" data-i18n="select_engine">Select engine...</option>
+                            <!-- Options injected by JS based on model -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="color" class="form-label" data-i18n="label_color">Exterior Color</label>
+                        <select id="color" name="color" class="form-control form-select">
+                            <!-- Populated by JS -->
+                        </select>
+                    </div>
+
+                        <div class="form-actions btn-center-wrapper">
+                            <button type="submit" class="btn btn-primary btn-atelier-submit" data-i18n="btn_complete_config">Complete Configuration & Add to Le Garage</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Right side: specifications -->
+                <div class="specs-side">
+                    <div id="dynamic-specs-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Подвал (Footer) -->
+    <footer>
+        <p>&copy; <span id="current-year"></span> <span data-i18n="footer_text">Marquis Automobile. Designed for Excellence.</span></p>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="js/lang.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/details.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

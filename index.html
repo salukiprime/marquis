@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquis | The Collection</title>
+    <meta name="description" content="Manage your Marquis vehicle collection">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Верхняя мини-навигация -->
+    <div class="top-nav">
+        <div class="lang">
+            <span onclick="setLanguage('en')" style="cursor: pointer; font-weight: bold; color: var(--color-white)">EN</span>
+            <span style="margin: 0 4px; color: #555">|</span>
+            <span onclick="setLanguage('ru')" style="cursor: pointer; color: #888">RU</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Provider</a>
+            <a href="#">Privacy</a>
+            <a href="#">Search</a>
+        </div>
+    </div>
+
+    <!-- Главная шапка -->
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"></div>
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active" data-i18n="nav_garage">Le Garage</a></li>
+                <li><a href="catalog.html" data-i18n="nav_collection">La Collection</a></li>
+                <li><a href="details.html" data-i18n="nav_atelier">L'Atelier</a></li>
+                <li><a href="maison.html" data-i18n="nav_maison">La Maison</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Секция Hero (главный баннер) -->
+    <section class="hero">
+        <!-- Фоновое изображение будет установлено через inline стиль или JS после генерации -->
+        <div class="hero-bg" id="hero-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/background%20photo%20marquis.png'); opacity: 1;"></div>
+        <div class="hero-content">
+            <h1 data-i18n="hero_title">The new Marquis Pavillon.</h1>
+            <p data-i18n="hero_subtitle">Elegance refined. Experience the pinnacle of modern luxury.</p>
+            <br>
+            <a href="catalog.html" class="btn btn-primary" data-i18n="btn_discover_collection">Discover La Collection &gt;</a>
+        </div>
+    </section>
+
+    <!-- L'Art de Détail Section -->
+    <section class="art-detail">
+        <div class="art-detail-content">
+            <div class="art-detail-grid">
+                <img src="images/headlights%20marquis%20pav.png" alt="Marquis Headlights" class="art-grid-img">
+                <img src="images/wheels%20marquis%20pav.png" alt="Marquis Wheels" class="art-grid-img">
+                <img src="images/marquis%20watch.png" alt="Marquis Dashboard Watch" class="art-grid-img">
+                <img src="images/marquis%20engine.png" alt="Marquis V8 Engine" class="art-grid-img">
+            </div>
+            <h2 data-i18n="art_detail_title" class="art-detail-title">L'Art de Détail</h2>
+            <p data-i18n="art_detail_subtitle" class="art-detail-subtitle">EXQUISITE CRAFTSMANSHIP IN EVERY ELEMENT</p>
+        </div>
+    </section>
+
+    <!-- Главный контейнер контента -->
+    <main class="container">
+        <div class="section-header">
+            <h2 data-i18n="garage_title">Le Garage</h2>
+            <a href="catalog.html" class="btn btn-primary btn-black" data-i18n="btn_add_collection">+ La Collection</a>
+        </div>
+
+        <!-- Счетчик автомобилей в коллекции -->
+        <p class="text-muted" style="margin-bottom: 1rem;"><span data-i18n="showing_vehicles">Showing</span> <span id="collection-count">0</span> <span data-i18n="vehicles_count">vehicles</span></p>
+
+        <!-- Сетка для элементов -->
+        <div class="collection-grid" id="collection-grid">
+            <!-- Элементы внедряются через JS -->
+        </div>
+    </main>
+
+    <!-- Подвал (Footer) -->
+    <footer>
+        <p>&copy; <span id="year"></span> <span data-i18n="footer_text">Marquis Automobile. Designed for Excellence.</span></p>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="js/lang.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

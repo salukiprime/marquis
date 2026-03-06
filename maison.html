@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Maison | Marquis</title>
+    <meta name="description" content="Discover the legacy and history of Marquis Automobile">
+    <!-- Извлеченные стили La Maison теперь находятся в style.css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Верхняя мини-навигация -->
+    <div class="top-nav">
+        <div class="lang">
+            <span onclick="setLanguage('en')" style="cursor: pointer; font-weight: bold; color: var(--color-white)">EN</span>
+            <span style="margin: 0 4px; color: #555">|</span>
+            <span onclick="setLanguage('ru')" style="cursor: pointer; color: #888">RU</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Provider</a>
+            <a href="#">Privacy</a>
+            <a href="#">Search</a>
+        </div>
+    </div>
+
+    <!-- Главная шапка -->
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"></div>
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" data-i18n="nav_garage">Le Garage</a></li>
+                <li><a href="catalog.html" data-i18n="nav_collection">La Collection</a></li>
+                <li><a href="details.html" data-i18n="nav_atelier">L'Atelier</a></li>
+                <li><a href="maison.html" class="active" data-i18n="nav_maison">La Maison</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Герой секции La Maison -->
+    <section class="maison-hero">
+        <h1 class="maison-title" data-i18n="maison_title">La Maison</h1>
+        <p class="maison-subtitle" data-i18n="maison_subtitle">A legacy of uncompromising excellence and avant-garde design since 1928.</p>
+    </section>
+
+    <!-- Контейнер истории -->
+    <main class="container">
+        
+        <!-- Секция Зарождение -->
+        <section class="history-section">
+            <div class="history-image">
+                [ 1928: The Genesis ]
+            </div>
+            <div class="history-content">
+                <h3 data-i18n="maison_genesis_title">The Genesis</h3>
+                <p data-i18n="maison_genesis_p1">Founded by visionary engineer Alexandre Marquis in the heart of Europe, the brand began with a simple yet ambitious goal: to create the most dynamically capable and luxurious vehicles the world had ever seen.</p>
+                <p data-i18n="maison_genesis_p2">The early models defied traditional constraints, setting sweeping records on the track while redefining sheer elegance for grand touring on the open road.</p>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <div class="history-image" style="background-color: var(--color-black); color: var(--color-creme); border-color: var(--color-black);">
+                [ 1968: The Golden Era ]
+            </div>
+            <div class="history-content">
+                <h3 data-i18n="maison_golden_title">The Golden Era</h3>
+                <p data-i18n="maison_golden_p1">Throughout the mid-century, Marquis became unmistakably synonymous with cinematic glamour and high society. The introduction of the iconic Scarlet emblem marked a shift towards bold, aggressive aesthetics.</p>
+                <p data-i18n="maison_golden_p2">Every vehicle rolling out of La Maison was recognized not just as an assembly of mechanical parts, but as a kinetic sculpture built purely to evoke emotion.</p>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <div class="history-image" style="background-color: #eee; border-color: #ddd;">
+                [ Today: Electric Excellence ]
+            </div>
+            <div class="history-content">
+                <h3 data-i18n="maison_electric_title">Electric Excellence</h3>
+                <p data-i18n="maison_electric_p1">Today, Marquis leads the charge into the sustainable future of absolute luxury. By integrating state-of-the-art electric powertrains without sacrificing an ounce of its legendary comfort or raw performance, the brand remains at the pinnacle of the automotive industry.</p>
+                <p data-i18n="maison_electric_p2">Models like the Belvédère and Mistral prove that silent running and zero emissions are the ultimate forms of modern indulgence.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Секция Манифест -->
+    <section class="manifesto">
+        <h3 data-i18n="maison_manifesto_title">Our Manifesto</h3>
+        <div class="manifesto-text">
+            <span data-i18n="maison_manifesto_text">"To drive a Marquis is to refuse compromise. We do not just build cars; we craft experiences that elevate every sense. We blend the relentless pursuit of engineering perfection with the highest artistry of classic coachbuilding. We are Marquis."</span>
+            <hr>
+            <strong style="font-style: normal; font-size: 1.125rem; letter-spacing: 0.1em;">- LE STUDIO MARQUIS</strong>
+        </div>
+    </div>
+
+    <!-- Подвал (Footer) -->
+    <footer>
+        <p>&copy; <span id="year"></span> <span data-i18n="footer_text">Marquis Automobile. Designed for Excellence.</span></p>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="js/lang.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

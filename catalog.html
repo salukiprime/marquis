@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Collection | Marquis</title>
+    <meta name="description" content="Browse the Marquis collection catalog">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Верхняя мини-навигация -->
+    <div class="top-nav">
+        <div class="lang">
+            <span onclick="setLanguage('en')" style="cursor: pointer; font-weight: bold; color: var(--color-white)">EN</span>
+            <span style="margin: 0 4px; color: #555">|</span>
+            <span onclick="setLanguage('ru')" style="cursor: pointer; color: #888">RU</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Provider</a>
+            <a href="#">Privacy</a>
+            <a href="#">Search</a>
+        </div>
+    </div>
+
+    <!-- Главная шапка -->
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"></div>
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" data-i18n="nav_garage">Le Garage</a></li>
+                <li><a href="catalog.html" class="active" data-i18n="nav_collection">La Collection</a></li>
+                <li><a href="details.html" data-i18n="nav_atelier">L'Atelier</a></li>
+                <li><a href="maison.html" data-i18n="nav_maison">La Maison</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Главный контейнер каталога -->
+    <main class="container">
+        <!-- Заголовок страницы -->
+        <div class="section-header catalog-header">
+            <h2 data-i18n="catalog_title">La Collection</h2>
+            <p data-i18n="catalog_subtitle">Select a model to configure in L'Atelier.</p>
+        </div>
+
+        <!-- Сетка каталога -->
+        <div class="catalog-grid" id="catalog-grid">
+            <!-- Элементы внедряются через js/catalog.js -->
+        </div>
+    </main>
+
+    <!-- Подвал (Footer) -->
+    <footer>
+        <p>&copy; <span id="year"></span> <span data-i18n="footer_text">Marquis Automobile. Designed for Excellence.</span></p>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="js/lang.js"></script>
+    <script src="js/catalog.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
