@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquis | The Collection</title>
+    <meta name="description" content="Manage your Marquis vehicle collection">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Верхняя мини-навигация -->
+    <div class="top-nav">
+
+        <div class="nav-links">
+            <a href="about.html">О проекте</a>
+        </div>
+    </div>
+
+    <!-- Главная шапка -->
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"></div>
+        </a>
+        <!-- Гамбургер-кнопка для мобильных -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="main-nav" id="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Le Garage</a></li>
+                <li><a href="catalog.html">La Collection</a></li>
+                <li><a href="details.html">L'Atelier</a></li>
+                <li><a href="maison.html">La Maison</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Секция Hero (главный баннер) -->
+    <section class="hero">
+        <!-- Фоновое изображение будет установлено через inline стиль или JS после генерации -->
+        <div class="hero-bg" id="hero-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/background%20photo%20marquis.png'); opacity: 1;"></div>
+        <div class="hero-content">
+            <h1>Новый Marquis Pavillon.</h1>
+            <p>Утонченная элегантность. Испытайте вершину современной роскоши.</p>
+            <br>
+            <a href="catalog.html" class="btn btn-primary">Открыть La Collection &gt;</a>
+        </div>
+    </section>
+
+    <!-- L'Art de Détail Section -->
+    <section class="art-detail">
+        <div class="art-detail-content">
+            <div class="art-detail-grid">
+                <img src="images/headlights%20marquis%20pav.png" alt="Marquis Headlights" class="art-grid-img">
+                <img src="images/wheels%20marquis%20pav.png" alt="Marquis Wheels" class="art-grid-img">
+                <img src="images/marquis%20watch.png" alt="Marquis Dashboard Watch" class="art-grid-img">
+                <img src="images/marquis%20engine.png" alt="Marquis V8 Engine" class="art-grid-img">
+            </div>
+            <h2 class="art-detail-title">L'Art de Détail</h2>
+            <p class="art-detail-subtitle">ИЗЫСКАННОЕ МАСТЕРСТВО В КАЖДОМ ЭЛЕМЕНТЕ</p>
+        </div>
+    </section>
+
+    <!-- Главный контейнер контента -->
+    <main class="container">
+        <div class="section-header">
+            <h2>Le Garage</h2>
+            <a href="catalog.html" class="btn btn-primary btn-black">+ La Collection</a>
+        </div>
+
+        <!-- Панель фильтрации и поиска -->
+        <div class="filter-bar">
+            <select id="filter-model">
+                <option value="all">Все модели</option>
+                <option value="Pavillon">Pavillon</option>
+                <option value="Belvédère">Belvédère</option>
+                <option value="Mistral">Mistral</option>
+            </select>
+
+            <input type="text" id="search-input" placeholder="Поиск по модели, цвету, двигателю...">
+        </div>
+
+        <!-- Счетчик автомобилей в коллекции -->
+        <p class="text-muted" style="margin-bottom: 1rem;"><span>Показано</span> <span id="collection-count">0</span> <span>автомобилей</span></p>
+
+        <!-- Сетка для элементов -->
+        <div class="collection-grid" id="collection-grid">
+            <!-- Элементы внедряются через JS -->
+        </div>
+    </main>
+
+    <!-- Подвал (Footer) -->
+    <footer>
+        <p>&copy; <span id="year"></span> <span>Marquis Automobile. Искусство Превосходства.</span></p>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // Гамбургер-меню
+        document.getElementById('hamburger-btn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('main-nav').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

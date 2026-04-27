@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Collection | Marquis</title>
+    <meta name="description" content="Collection statistics and model browser for Marquis Automobile">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Верхняя мини-навигация -->
+    <div class="top-nav">
+
+        <div class="nav-links">
+            <a href="about.html">О проекте</a>
+        </div>
+    </div>
+
+    <!-- Главная шапка -->
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"></div>
+        </a>
+        <!-- Гамбургер-кнопка для мобильных -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="main-nav" id="main-nav">
+            <ul>
+                <li><a href="index.html">Le Garage</a></li>
+                <li><a href="catalog.html" class="active">La Collection</a></li>
+                <li><a href="details.html">L'Atelier</a></li>
+                <li><a href="maison.html">La Maison</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Главный контейнер -->
+    <main class="container">
+        <!-- Заголовок страницы -->
+        <div class="section-header catalog-header">
+            <h2>Статистика La Collection</h2>
+            <p>Глобальный обзор и аналитика вашей коллекции Le Garage.</p>
+        </div>
+
+        <!-- Сетка статистики -->
+        <div class="stats-grid" id="stats-grid">
+            <!-- Виджеты генерируются через js/catalog.js -->
+        </div>
+
+        <!-- Диаграмма распределения моделей -->
+        <div id="distribution-section">
+            <!-- Генерируется через js/catalog.js -->
+        </div>
+
+        <!-- Обзор моделей для конфигурации -->
+        <div id="models-browse-section">
+            <!-- Генерируется через js/catalog.js -->
+        </div>
+    </main>
+
+    <!-- Подвал (Footer) -->
+    <footer>
+        <p>&copy; <span id="year"></span> <span>Marquis Automobile. Искусство Превосходства.</span></p>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="js/storage.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/catalog.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // Гамбургер-меню
+        document.getElementById('hamburger-btn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('main-nav').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

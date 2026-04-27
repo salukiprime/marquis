@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Project | Marquis</title>
+    <meta name="description" content="About the Marquis vehicle collection project">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top mini-navigation -->
+    <div class="top-nav">
+
+        <div class="nav-links">
+            <a href="about.html" class="active">О проекте</a>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"></div>
+        </a>
+        <!-- Гамбургер-кнопка для мобильных -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="main-nav" id="main-nav">
+            <ul>
+                <li><a href="index.html">Le Garage</a></li>
+                <li><a href="catalog.html">La Collection</a></li>
+                <li><a href="details.html">L'Atelier</a></li>
+                <li><a href="maison.html">La Maison</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Title -->
+    <section class="maison-hero" style="min-height: 30vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <h1 class="maison-title">О проекте</h1>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Purpose -->
+        <section class="history-section" style="margin-top: 4rem;">
+            <div class="history-image" style="background-color: var(--color-black); color: var(--color-creme); border-color: var(--color-black);">
+                [ Project ]
+            </div>
+            <div class="history-content">
+                <h3>Цель проекта</h3>
+                <p>Разработка информационного веб-портала автомобильной тематики для управления вашей личной коллекцией автомобилей Marquis.</p>
+            </div>
+        </section>
+
+        <!-- Author Information -->
+        <section class="history-section">
+            <div class="history-image" style="background-color: #eee; border-color: #ddd;">
+                [ Author ]
+            </div>
+            <div class="history-content">
+                <h3>Информация об авторе</h3>
+                <p>Имя: Даниал</p>
+                <p>Курс: 13 ТИС/2 курс</p>
+                <p>Контакты: https://github.com/salukiprime/marquis.github.io</p>
+            </div>
+        </section>
+
+        <!-- Instructions for Use -->
+        <section class="history-section">
+            <div class="history-image" style="background-color: var(--color-black); color: var(--color-creme); border-color: var(--color-black);">
+                [ Guides ]
+            </div>
+            <div class="history-content">
+                <h3>Инструкция по использованию</h3>
+                <p>1. Добавление: Перейдите в \"La Collection\", выберите автомобиль, настройте его в \"L'Atelier\" и сохраните, чтобы добавить в Гараж.</p>
+                <p>2. Удаление: На странице \"Le Garage\" нажмите кнопку \"X\", чтобы продать автомобиль.</p>
+                <p>3. Фильтрация: Используйте панель фильтров на странице Le Garage для поиска по модели, статусу или ключевым словам.</p>
+            </div>
+        </section>
+
+        <!-- Technology Stack -->
+        <section class="history-section">
+            <div class="history-image" style="background-color: #eee; border-color: #ddd;">
+                [ Tech ]
+            </div>
+            <div class="history-content">
+                <h3>Технологии</h3>
+                <p>HTML5, CSS3, чистый JavaScript (ES6+), LocalStorage</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> <span>Marquis Automobile. Искусство Превосходства.</span></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // Гамбургер-меню
+        document.getElementById('hamburger-btn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('main-nav').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

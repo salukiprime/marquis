@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Maison | Marquis</title>
+    <meta name="description" content="Discover the legacy and history of Marquis Automobile">
+    <!-- Извлеченные стили La Maison теперь находятся в style.css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Верхняя мини-навигация -->
+    <div class="top-nav">
+
+        <div class="nav-links">
+            <a href="about.html">О проекте</a>
+        </div>
+    </div>
+
+    <!-- Главная шапка -->
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"></div>
+        </a>
+        <!-- Гамбургер-кнопка для мобильных -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="main-nav" id="main-nav">
+            <ul>
+                <li><a href="index.html">Le Garage</a></li>
+                <li><a href="catalog.html">La Collection</a></li>
+                <li><a href="details.html">L'Atelier</a></li>
+                <li><a href="maison.html" class="active">La Maison</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Герой секции La Maison -->
+    <section class="maison-hero">
+        <h1 class="maison-title">La Maison</h1>
+        <p class="maison-subtitle">Наследие бескомпромиссного совершенства и авангардного дизайна с 1928 года.</p>
+    </section>
+
+    <!-- Контейнер истории -->
+    <main class="container">
+        
+        <!-- Секция Зарождение -->
+        <section class="history-section">
+            <div class="history-image">
+                [ 1928: The Genesis ]
+            </div>
+            <div class="history-content">
+                <h3>Зарождение</h3>
+                <p>Основанный дальновидным инженером Александром Маркизом в самом сердце Европы, бренд начался с простой, но амбициозной цели: создать самые динамичные и роскошные автомобили, которые когда-либо видел мир.</p>
+                <p>Ранние модели бросали вызов традиционным ограничениям, устанавливая стремительные рекорды на треке и переосмысливая чистую элегантность дальних поездок на открытой дороге.</p>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <div class="history-image" style="background-color: var(--color-black); color: var(--color-creme); border-color: var(--color-black);">
+                [ 1968: The Golden Era ]
+            </div>
+            <div class="history-content">
+                <h3>Золотая Эра</h3>
+                <p>На протяжении середины прошлого века Marquis стал безошибочно ассоциироваться с кинематографическим гламуром и высшим обществом. Внедрение знаковой Алой эмблемы ознаменовало сдвиг в сторону смелой и агрессивной эстетики.</p>
+                <p>Каждый автомобиль, выезжающий из La Maison, признавался не просто сборкой механических деталей, а кинетической скульптурой, созданной исключительно для того, чтобы вызывать эмоции.</p>
+            </div>
+        </section>
+
+        <section class="history-section">
+            <div class="history-image" style="background-color: #eee; border-color: #ddd;">
+                [ Today: Electric Excellence ]
+            </div>
+            <div class="history-content">
+                <h3>Электрическое Совершенство</h3>
+                <p>Сегодня Marquis возглавляет движение в устойчивое будущее абсолютной роскоши. Интегрируя самые современные электрические силовые агрегаты без малейшего ущерба для легендарного комфорта, бренд остается на вершине автомобильной промышленности.</p>
+                <p>Такие модели, как Belvédère и Mistral, доказывают, что бесшумный ход и нулевые выбросы — это высшие формы современного удовольствия.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Секция Манифест -->
+    <section class="manifesto">
+        <h3>Наш Манифест</h3>
+        <div class="manifesto-text">
+            <span>"Водить Marquis означает отказаться от компромиссов. Мы не просто строим автомобили; мы создаем опыт, который возвышает все чувства. Мы сочетаем неустанное стремление к инженерному совершенству с высочайшим искусством классического кузовостроения. Мы — Marquis."</span>
+            <hr>
+            <strong style="font-style: normal; font-size: 1.125rem; letter-spacing: 0.1em;">- LE STUDIO MARQUIS</strong>
+        </div>
+    </section>
+
+    <!-- Подвал (Footer) -->
+    <footer>
+        <p>&copy; <span id="year"></span> <span>Marquis Automobile. Искусство Превосходства.</span></p>
+    </footer>
+
+    <!-- Скрипты -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        // Гамбургер-меню
+        document.getElementById('hamburger-btn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('main-nav').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
